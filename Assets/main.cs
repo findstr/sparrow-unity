@@ -39,9 +39,14 @@ public class main : MonoBehaviour
 				ui_servers = UI.Login.UI_ServerList.CreateInstance();
 				var server_entry = UI.Login.UI_ServerEntry.CreateInstance();
 				server_entry.m_name.text = "1Çø ÅÌ¹Å¿ªÌì";
+				server_entry.serverID = 3;
 				ui_servers.m_list.AddChild(server_entry);
 				GRoot.inst.ShowPopup(ui_servers);
 				ui_servers.Center();
+				ui_servers.m_list.onClickItem.Add((EventContext context) => {
+					var server = context.data as UI.Login.UI_ServerEntry;
+					Debug.Log("ServerID:" + server.serverID);
+				});
 			});
 		});
 	}

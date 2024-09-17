@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<packageDescription id="7nn1vccc">
+  <resources>
+    <image id="c7mp9" name="InputBox.png" path="/" exported="true" scale="9grid" scale9grid="7,8,14,11"/>
+    <image id="c7mp7" name="btn_normal.png" path="/" exported="true" scale="9grid" scale9grid="10,8,10,13"/>
+    <image id="c7mp8" name="btn_over.png" path="/" exported="true"/>
+    <image id="w39na" name="dialogBg.png" path="/" exported="true" scale="9grid" scale9grid="30,13,8,10"/>
+  </resources>
+  <publish name=""/>
+</packageDescription>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="800,600">
+  <displayList>
+    <image id="n4_w39n" name="n4" src="w39na" fileName="dialogBg.png" pkg="7nn1vccc" xy="0,1" size="800,599"/>
+    <list id="n5_w39n" name="list" xy="98,55" size="603,490" layout="flow_hz" overflow="scroll" lineGap="3" colGap="3" lineItemCount="2" autoClearItems="true">
+      <relation target="" sidePair="width-width,height-height"/>
+      <item url="ui://daz1xfn4w39nc"/>
+      <item url="ui://daz1xfn4w39nc"/>
+      <item url="ui://daz1xfn4w39nc"/>
+    </list>
+  </displayList>
+</component>

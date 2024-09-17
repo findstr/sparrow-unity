@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="1920,1080">
+  <displayList>
+    <image id="n0_wn6z" name="n0" src="wn6z0" fileName="images/Title_FeatherOfCyan.png" xy="0,0" size="1920,1080">
+      <relation target="" sidePair="width-width,height-height"/>
+    </image>
+    <component id="n18_w39n" name="selected" src="w39na" fileName="ServerSelected.xml" xy="636,657" size="648,70"/>
+    <component id="n16_c7mp" name="enter" src="c7mp6" fileName="登录.xml" xy="638,812" size="651,77"/>
+  </displayList>
+</component>

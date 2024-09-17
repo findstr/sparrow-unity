@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="100,50">
+  <displayList>
+    <image id="n2_c7mp" name="n2" src="c7mp9" fileName="InputBox.png" pkg="7nn1vccc" xy="0,0" size="100,50">
+      <relation target="" sidePair="width-width,height-height"/>
+    </image>
+    <richtext id="n3_w39n" name="n3" xy="0,0" size="100,50" fontSize="30" align="center" vAlign="middle" autoSize="none" autoClearText="true" text="鸿蒙初开">
+      <relation target="" sidePair="width-width,height-height"/>
+    </richtext>
+  </displayList>
+</component>

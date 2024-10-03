@@ -3,16 +3,16 @@
 using FairyGUI;
 using FairyGUI.Utils;
 
-namespace UI.Login
+namespace UI.View.Login
 {
-    public partial class UI_ServerEntry : GComponent
+    public partial class ServerEntry : GButton
     {
         public GTextField m_name;
-        public const string URL = "ui://daz1xfn4w39nc";
+        public const string URL = "ui://daz1xfn4s24hd";
 
-        public static UI_ServerEntry CreateInstance()
+        public static ServerEntry CreateInstance()
         {
-            return (UI_ServerEntry)UIPackage.CreateObject("Login", "ServerEntry");
+            return (ServerEntry)UIPackage.CreateObject("Login", "ServerEntry");
         }
 
         public override void ConstructFromXML(XML xml)

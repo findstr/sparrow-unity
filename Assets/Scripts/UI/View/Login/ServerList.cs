@@ -3,16 +3,16 @@
 using FairyGUI;
 using FairyGUI.Utils;
 
-namespace UI.Login
+namespace UI.View.Login
 {
-    public partial class UI_ServerList : GComponent
+    public partial class ServerList : GComponent
     {
         public GList m_list;
         public const string URL = "ui://daz1xfn4w39nb";
 
-        public static UI_ServerList CreateInstance()
+        public static ServerList CreateInstance()
         {
-            return (UI_ServerList)UIPackage.CreateObject("Login", "ServerList");
+            return (ServerList)UIPackage.CreateObject("Login", "ServerList");
         }
 
         public override void ConstructFromXML(XML xml)

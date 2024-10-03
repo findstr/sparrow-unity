@@ -1,9 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<component size="300,80">
+<component size="300,80" extention="Button">
+  <controller name="button" pages="0,up,1,down,2,over,3,selectedOver" selected="0"/>
   <displayList>
-    <image id="n0_w39n" name="n0" src="c7mp9" fileName="InputBox.png" pkg="7nn1vccc" xy="0,0" size="300,80">
+    <image id="n3_s24h" name="n0" src="c7mp9" fileName="InputBox.png" pkg="7nn1vccc" xy="0,0" size="300,80">
+      <gearDisplay controller="button" pages="0,2"/>
       <relation target="" sidePair="width-width,height-height"/>
     </image>
-    <text id="n1_w39n" name="name" xy="50,0" size="248,80" fontSize="26" vAlign="middle" autoSize="none" autoClearText="true" text="120区  鸿蒙之初"/>
+    <image id="n4_s24h" name="n1" src="c7mp9" fileName="InputBox.png" pkg="7nn1vccc" xy="0,0" size="300,80" color="#7d7d7d">
+      <gearDisplay controller="button" pages="1"/>
+      <relation target="" sidePair="width-width,height-height"/>
+    </image>
+    <text id="n5_s24h" name="name" xy="50,0" size="248,80" fontSize="22" vAlign="middle" autoSize="none" text="120区  鸿蒙之初"/>
   </displayList>
+  <Button/>
 </component>

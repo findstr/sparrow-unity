@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="1920,1080">
+  <displayList>
+    <graph id="n0_eg9z" name="n0" xy="0,0" size="1920,1080" alpha="0" type="rect" lineColor="#00000000" fillColor="#00ffffff">
+      <relation target="" sidePair="width-width,height-height"/>
+    </graph>
+    <movieclip id="n2_eg9z" name="n2" src="eg9zd" fileName="loading.jta" xy="861,450" size="197,180">
+      <relation target="" sidePair="center-center,middle-middle"/>
+    </movieclip>
+  </displayList>
+  <transition name="t0" autoPlay="true">
+    <item time="0" type="Alpha" target="n2_eg9z" value="0"/>
+    <item time="24" type="Alpha" target="n2_eg9z" value="1"/>
+  </transition>
+</component>

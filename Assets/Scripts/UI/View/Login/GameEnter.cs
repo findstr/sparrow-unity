@@ -3,25 +3,25 @@
 using FairyGUI;
 using FairyGUI.Utils;
 
-namespace UI.Login
+namespace UI.View.Login
 {
-    public partial class UI_GameEnter : GComponent
+    public partial class GameEnter : GComponent
     {
-        public GComponent m_selected;
         public GButton m_enter;
+        public ServerSelected m_select;
         public const string URL = "ui://daz1xfn4w39n7";
 
-        public static UI_GameEnter CreateInstance()
+        public static GameEnter CreateInstance()
         {
-            return (UI_GameEnter)UIPackage.CreateObject("Login", "GameEnter");
+            return (GameEnter)UIPackage.CreateObject("Login", "GameEnter");
         }
 
         public override void ConstructFromXML(XML xml)
         {
             base.ConstructFromXML(xml);
 
-            m_selected = (GComponent)GetChild("selected");
             m_enter = (GButton)GetChild("enter");
+            m_select = (ServerSelected)GetChild("select");
         }
     }
 }

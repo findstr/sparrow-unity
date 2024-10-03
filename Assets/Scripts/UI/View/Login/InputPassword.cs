@@ -3,23 +3,23 @@
 using FairyGUI;
 using FairyGUI.Utils;
 
-namespace UI.Login
+namespace UI.View.Login
 {
-    public partial class UI_InputPassword : GComponent
+    public partial class InputPassword : GComponent
     {
-        public GTextInput m_text;
+        public GTextInput m_input;
         public const string URL = "ui://daz1xfn4c7mp3";
 
-        public static UI_InputPassword CreateInstance()
+        public static InputPassword CreateInstance()
         {
-            return (UI_InputPassword)UIPackage.CreateObject("Login", "InputPassword");
+            return (InputPassword)UIPackage.CreateObject("Login", "InputPassword");
         }
 
         public override void ConstructFromXML(XML xml)
         {
             base.ConstructFromXML(xml);
 
-            m_text = (GTextInput)GetChild("text");
+            m_input = (GTextInput)GetChild("input");
         }
     }
 }

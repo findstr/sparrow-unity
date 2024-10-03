@@ -3,13 +3,13 @@
   <resources>
     <image id="wn6z0" name="Title_FeatherOfCyan.png" path="/images/" exported="true"/>
     <component id="wn6z1" name="Auth.xml" path="/" exported="true"/>
-    <component id="c7mp2" name="InputUser.xml" path="/"/>
-    <component id="c7mp3" name="InputPassword.xml" path="/"/>
-    <component id="c7mp6" name="登录.xml" path="/"/>
+    <component id="c7mp2" name="InputUser.xml" path="/" exported="true"/>
+    <component id="c7mp3" name="InputPassword.xml" path="/" exported="true"/>
+    <component id="c7mp6" name="登录.xml" path="/" exported="true"/>
     <component id="w39n7" name="GameEnter.xml" path="/" exported="true"/>
-    <component id="w39na" name="ServerSelected.xml" path="/"/>
     <component id="w39nb" name="ServerList.xml" path="/" exported="true"/>
-    <component id="w39nc" name="ServerEntry.xml" path="/" exported="true"/>
+    <component id="s24hd" name="ServerEntry.xml" path="/" exported="true"/>
+    <component id="s24he" name="ServerSelected.xml" path="/" exported="true"/>
   </resources>
   <publish name="" genCode="true"/>
 </packageDescription>

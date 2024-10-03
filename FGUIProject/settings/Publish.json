@@ -9,10 +9,10 @@
   "compressPNG": false,
   "codeGeneration": {
     "allowGenCode": true,
-    "codePath": "D:\\sparrow-unity\\Assets\\Scripts\\UI",
-    "classNamePrefix": "UI_",
+    "codePath": "D:\\sparrow-unity\\Assets\\Scripts\\UI\\View",
+    "classNamePrefix": "",
     "memberNamePrefix": "m_",
-    "packageName": "UI",
+    "packageName": "UI.View",
     "ignoreNoname": true,
     "getMemberByName": true,
     "codeType": ""

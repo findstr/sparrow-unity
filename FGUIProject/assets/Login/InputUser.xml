@@ -4,7 +4,7 @@
     <image id="n2_c7mp" name="n2" src="c7mp9" fileName="InputBox.png" pkg="7nn1vccc" xy="0,0" size="100,50">
       <relation target="" sidePair="width-width,height-height"/>
     </image>
-    <text id="n1_c7mp" name="text" xy="0,0" size="100,50" fontSize="30" align="center" vAlign="middle" autoSize="none" text="" input="true" prompt="请输入账号">
+    <text id="n1_c7mp" name="input" xy="0,0" size="100,50" fontSize="30" align="center" vAlign="middle" autoSize="none" text="" input="true" prompt="请输入账号">
       <relation target="" sidePair="width-width,height-height"/>
     </text>
   </displayList>

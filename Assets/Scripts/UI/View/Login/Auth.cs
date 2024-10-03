@@ -3,26 +3,26 @@
 using FairyGUI;
 using FairyGUI.Utils;
 
-namespace UI.Login
+namespace UI.View.Login
 {
-    public partial class UI_Auth : GComponent
+    public partial class Auth : GComponent
     {
-        public UI_InputUser m_user;
-        public UI_InputPassword m_passwd;
+        public InputUser m_user;
+        public InputPassword m_passwd;
         public GButton m_auth;
         public const string URL = "ui://daz1xfn4wn6z1";
 
-        public static UI_Auth CreateInstance()
+        public static Auth CreateInstance()
         {
-            return (UI_Auth)UIPackage.CreateObject("Login", "Auth");
+            return (Auth)UIPackage.CreateObject("Login", "Auth");
         }
 
         public override void ConstructFromXML(XML xml)
         {
             base.ConstructFromXML(xml);
 
-            m_user = (UI_InputUser)GetChild("user");
-            m_passwd = (UI_InputPassword)GetChild("passwd");
+            m_user = (InputUser)GetChild("user");
+            m_passwd = (InputPassword)GetChild("passwd");
             m_auth = (GButton)GetChild("auth");
         }
     }

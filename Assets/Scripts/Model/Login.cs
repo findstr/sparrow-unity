@@ -26,7 +26,7 @@ class Login {
 	public event Action onAuthAck;
 	public event Action OnServerSelected;
 
-	public void Init() {
+	public Login() {
 		_authName = PlayerPrefs.GetString(NameKey, "");
 		_authPass = PlayerPrefs.GetString(PassKey, "");
 		Debug.Log("AuthName: " + _authName);

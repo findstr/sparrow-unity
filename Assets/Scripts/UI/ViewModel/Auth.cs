@@ -33,7 +33,7 @@ public class Auth : Base {
 			account = Model.Inst.Login.AuthName,
 			password = Model.Inst.Login.AuthPass,
 		};
-		Net.Inst.SendObj(req);
+		Net.Inst.Send(req);
 	}
 	void OnAuthAck() {
 		Debug.Log("Login Ret:" + model.ErrorCode);

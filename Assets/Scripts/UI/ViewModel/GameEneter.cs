@@ -1,5 +1,7 @@
 ﻿using FairyGUI;
 using UnityEngine;
+using UnityEngine.Experimental.AI;
+using UnityEngine.SceneManagement;
 
 namespace UI {
 namespace ViewModel {
@@ -20,11 +22,12 @@ public class GameEnter: Base {
 		view.m_enter.onClick.Add(OnBtnEnter);
 		view.m_select.onClick.Add(OnBtnSelect);
 		model.OnServerSelected += OnServerSelected;
-		Net.Inst.SendObj(new proto.servers_r());
+		Net.Inst.Send(new proto.servers_r());
 		//TODO: show loading
 	}
 	void OnBtnEnter() {
-
+		SceneManager.LoadSceneAsync("World", LoadSceneMode.Additive);
+		Model.Inst.Player.Login(); 
 	}
 
 	void OnBtnSelect() {

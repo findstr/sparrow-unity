@@ -25,20 +25,20 @@ public class Net : MonoBehaviour
 	private Dictionary<string, Action<string>> router = new Dictionary<string, Action<string>>();
 	public WebSocketConnection conn;
 	public string url = "ws://127.0.0.1:10001";
-	public Net() {
-		Inst = this;
-	}
 	public void Awake()
 	{
+		Inst = this;
 		conn = GetComponent<WebSocketConnection>();
 		conn.Connect(url);
 		conn.StateChanged += onStateChanged;
 		conn.ErrorMessageReceived += onErrorMessageReceived;
 		conn.MessageReceived += OnMessageReceived;
+		Debug.Log("[Net]OnAwake");
 	}
 
 	public void OnDestroy()
 	{
+		Debug.Log("[Net]OnDestroy");
 		conn.StateChanged -= onStateChanged;
 		conn.ErrorMessageReceived -= onErrorMessageReceived;
 		conn.MessageReceived -= OnMessageReceived;
@@ -75,13 +75,13 @@ public class Net : MonoBehaviour
 		router[cmd] = xfn;
 	}
 
-	public void SendObj(object msg)
+	public void Send(object msg)
 	{
 		Type msgType = msg.GetType();
 		string cmd = msgType.Name; 
 		string body = JsonUtility.ToJson(msg);
 		string str = string.Format("{{ \"cmd\": \"{0}\", \"body\": {1} }}", cmd, body);
-		Debug.Log("XXX" + str);
+		Debug.Log("Send" + str);
 		conn.AddOutgoingMessage(str);
 	}
 
@@ -104,13 +104,12 @@ public class Net : MonoBehaviour
 	}
 	private void OnMessageReceived(WebSocketConnection connection, WebSocketMessage message)
 	{
-		Debug.Log(message.String);
+		Debug.Log("Recv:" + message.String);
 		var header = JsonUtility.FromJson<Header>(message.String);
-		var fn = router[header.cmd];
-		if (fn == null) {
-			Debug.LogError("No handler for cmd:" + header.cmd);
-			return;
+		if (router.TryGetValue(header.cmd, out Action<string> fn)) {
+			fn(message.String);
+		} else {
+			Debug.Log("No handler for cmd:" + header.cmd);
 		}
-		fn(message.String);
 	}
 }

@@ -41,6 +41,8 @@ namespace proto {
 		public uint code;
 		public ulong uid;
 		public string name;
+		public long x;
+		public long z;
 	}
 
 	[Serializable]
@@ -54,5 +56,18 @@ namespace proto {
 		public uint code;
 		public ulong uid;
 		public string name;
+		public long x;
+		public long z;
+	}
+	[Serializable]
+	public struct move_r {
+		public long x;
+		public long z;
+	}
+	[Serializable]
+	public struct move_a {
+		public ulong uid;
+		public long x;
+		public long z;
 	}
 }

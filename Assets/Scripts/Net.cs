@@ -28,7 +28,7 @@ public class Net : MonoBehaviour
 	public void Awake()
 	{
 		Inst = this;
-		conn = GetComponent<WebSocketConnection>();
+		conn = gameObject.AddComponent<WebSocketConnection>();
 		conn.Connect(url);
 		conn.StateChanged += onStateChanged;
 		conn.ErrorMessageReceived += onErrorMessageReceived;
@@ -54,22 +54,26 @@ public class Net : MonoBehaviour
 
 	public void Connect()
 	{
-
+		conn.Connect();
 	}
 
-	public void Close() 
+	public void Close()
 	{
-
+		conn.Disconnect();
 	}
 
-	public void Reg<T>(Action<T> fn) 
+	public void Reg<T>(Action<T> fn)
 	{
 		void xfn(string str)
 		{
 			var x = JsonUtility.FromJson<Packet<T>>(str);
 			Debug.Log("XXX:" + x);
 			Debug.Log("YYY:" + x.body.ToString());
-			fn(x.body);
+			try {
+				fn(x.body);
+			} catch (Exception e) {
+				Debug.LogError(e);
+			}
 		}
 		string cmd = typeof(T).Name;
 		router[cmd] = xfn;
@@ -78,14 +82,14 @@ public class Net : MonoBehaviour
 	public void Send(object msg)
 	{
 		Type msgType = msg.GetType();
-		string cmd = msgType.Name; 
+		string cmd = msgType.Name;
 		string body = JsonUtility.ToJson(msg);
 		string str = string.Format("{{ \"cmd\": \"{0}\", \"body\": {1} }}", cmd, body);
 		Debug.Log("Send" + str);
 		conn.AddOutgoingMessage(str);
 	}
 
-	private void onStateChanged(WebSocketConnection connection, WebSocketState oldState, WebSocketState newState)
+	private void onStateChanged(WebSocketConnection conn, WebSocketState oldState, WebSocketState newState)
 	{
 		switch (newState) {
 		case WebSocketState.Disconnected:

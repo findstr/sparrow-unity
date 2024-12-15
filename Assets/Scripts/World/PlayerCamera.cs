@@ -6,7 +6,8 @@ namespace World {
 
 public class PlayerCamera : MonoBehaviour
 {
-	public Transform target; 
+	public Vector3 offset;
+	public Transform target;
 	public void Follow(Transform target)
 	{
 		this.target = target;
@@ -18,11 +19,9 @@ public class PlayerCamera : MonoBehaviour
 			return;
 		}
 		// 相机跟随
-		Vector3 targetPosition = target.position;
-		targetPosition.y += 2; // 相机稍微高于Cube一些
-		targetPosition.z -= 3; // 相机稍微在Cube的后面一些
+		Vector3 targetPosition = target.position + offset;
 		transform.position = Vector3.Lerp(transform.position, targetPosition, 0.1f);
-	} 
+	}
 }
 
 

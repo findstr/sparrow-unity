@@ -23,7 +23,7 @@ public class Player {
 		}
 	}
 
-	public Action onLoginSuccess;
+	public Action onLoginSuccess = delegate {};
 	public Player() {
 		Net.Inst.Reg<proto.login_a>(OnLoginAck);
 		Net.Inst.Reg<proto.create_a>(OnCreateAck);
@@ -50,7 +50,7 @@ public class Player {
 		}
 		UID = ack.uid;
 		Name = ack.name;
-		pos = new Vector3(ack.x, 0, ack.z);
+		pos = new Vector3(ack.x, 1.0f, ack.z);
 		syncPos = pos;
 		onLoginSuccess();
 	}

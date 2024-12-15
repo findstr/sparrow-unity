@@ -24,10 +24,10 @@ public class Manager : MonoBehaviour
 
 	}
 	void OnLoginSuccess() {
-		Debug.Log("Login:" + Resources.Load("Prefab/Player"));
+		Debug.Log("Login:" + Resources.Load("Prefab/Barbarian"));
 		Debug.Log("OnLoginSuccess:" + Model.Inst.Player.UID);
 		UI.Stack.Clear();
-		var go = Instantiate(Resources.Load("Prefab/Player"), Model.Inst.Player.Pos, Quaternion.identity) as GameObject;
+		var go = Instantiate(Resources.Load("Prefab/Barbarian"), Model.Inst.Player.Pos, Quaternion.identity) as GameObject;
 		PlayerCamera.Follow(go.transform);
 
 		//SceneManager.SetActiveScene(SceneManager.GetSceneByName("Main"));
